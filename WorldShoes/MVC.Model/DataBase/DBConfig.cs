@@ -1,4 +1,5 @@
 ﻿using MVC.Model.DataBase.Model;
+using MVC.Model.DataBase.Repository;
 using MySql.Data.MySqlClient;
 using NHibernate;
 using NHibernate.Cfg;
@@ -20,9 +21,33 @@ namespace MVC.Model.DataBase
 
         private static DBConfig _instance = null;
         private ISessionFactory _sessionFactory;
+        public AvaliacaoRepository AvaliacaoRepository { get; set; }
+        public CategoriaRepository CategoriaRepository { get; set; }
+        public CorRepository CorRepository { get; set; }
+        public EnderecoRepository EnderecoRepository { get; set; }
+        public FabricanteRepository FabricanteRepository { get; set; }
+        public FotoProdutoRepository FotoProdutoRepository { get; set; }
+        public GeneroRepository GeneroRepository { get; set; }
+        public PedidoRepository PedidoRepository { get; set; }
+        public ProdutoRepository ProdutoRepository { get; set; }
+        public TelefoneRepository TelefoneRepository { get; set; }
+        public UsuarioRepository UsuarioRepository { get; set; }
+        
 
         private DBConfig()
         {
+            this.AvaliacaoRepository = new AvaliacaoRepository(Session);
+            this.CategoriaRepository = new CategoriaRepository(Session);
+            this.CorRepository = new CorRepository(Session);
+            this.EnderecoRepository = new EnderecoRepository(Session);
+            this.FabricanteRepository = new FabricanteRepository(Session);
+            this.FotoProdutoRepository = new FotoProdutoRepository(Session);
+            this.GeneroRepository = new GeneroRepository(Session);
+            this.PedidoRepository = new PedidoRepository(Session);
+            this.ProdutoRepository = new ProdutoRepository(Session);
+            this.TelefoneRepository = new TelefoneRepository(Session);
+            this.UsuarioRepository = new UsuarioRepository(Session);
+
             Conectar();
 
         }

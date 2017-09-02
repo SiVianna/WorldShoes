@@ -65,7 +65,17 @@
     <Compile Include="DataBase\Model\Produto.cs" />
     <Compile Include="DataBase\Model\Telefone.cs" />
     <Compile Include="DataBase\Model\Usuario.cs" />
+    <Compile Include="DataBase\Repository\AvaliacaoRepository.cs" />
+    <Compile Include="DataBase\Repository\CategoriaRepository.cs" />
+    <Compile Include="DataBase\Repository\CorRepository.cs" />
+    <Compile Include="DataBase\Repository\EnderecoRepository.cs" />
+    <Compile Include="DataBase\Repository\FabricanteRepository.cs" />
+    <Compile Include="DataBase\Repository\FotoProdutoRepository.cs" />
+    <Compile Include="DataBase\Repository\GeneroRepository.cs" />
+    <Compile Include="DataBase\Repository\PedidoRepository.cs" />
+    <Compile Include="DataBase\Repository\ProdutoRepository.cs" />
     <Compile Include="DataBase\Repository\RepositoryBase.cs" />
+    <Compile Include="DataBase\Repository\TelefoneRepository.cs" />
     <Compile Include="DataBase\Repository\UsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
