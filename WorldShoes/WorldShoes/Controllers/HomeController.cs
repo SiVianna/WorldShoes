@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC.Model.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,7 @@ namespace WorldShoes.Controllers
     {
         public ActionResult Index()
         {
+            var usuarios = DBConfig.Instance;
             return View();
         }
         //popopopopopopopopo
