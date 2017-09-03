@@ -4,6 +4,8 @@
     ViewBag.Title = "CreateUsuario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<!--http://www.macoratti.net/14/09/mvc_flogin.htm-->
 <section id="form">
     <!--form-->
     <div class="container">
@@ -12,11 +14,19 @@
                 <div class="login-form">
                     <!--login form-->
                     <h2>Já sou Cadastrado</h2>
-                    @using (Html.BeginForm())
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
                     {
                         @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        if (@ViewBag.Message != null)
+                        {
+                            <div style="border:1px solid red">
+                                @ViewBag.Message
+                            </div>
+                        } 
+                       
 
-                        <input type="text" placeholder="Name" />
+                            <input type="text" placeholder="Name" />
                             <input type="email" placeholder="Email Address" />
                             <span>
                                 <input type="checkbox" class="checkbox">
@@ -24,7 +34,8 @@
                             </span>
                             <button type="submit" value="Create" class="btn btn-default">Login</button>
 
-                    }
+                          
+                      }
                 </div><!--/login form-->
             </div>
             <div class="col-sm-1">

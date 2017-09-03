@@ -37,19 +37,19 @@ namespace MVC.Model.DataBase
         private DBConfig()
         {
             Conectar();
-            //this.AvaliacaoRepository = new AvaliacaoRepository(Session);
-            //this.CategoriaRepository = new CategoriaRepository(Session);
-            //this.CorRepository = new CorRepository(Session);
-            //this.EnderecoRepository = new EnderecoRepository(Session);
-            //this.FabricanteRepository = new FabricanteRepository(Session);
-            //this.FotoProdutoRepository = new FotoProdutoRepository(Session);
-            //this.GeneroRepository = new GeneroRepository(Session);
-            //this.PedidoRepository = new PedidoRepository(Session);
-            //this.ProdutoRepository = new ProdutoRepository(Session);
-            //this.TelefoneRepository = new TelefoneRepository(Session);
-            //this.UsuarioRepository = new UsuarioRepository(Session);
+            this.AvaliacaoRepository = new AvaliacaoRepository(Session);
+            this.CategoriaRepository = new CategoriaRepository(Session);
+            this.CorRepository = new CorRepository(Session);
+            this.EnderecoRepository = new EnderecoRepository(Session);
+            this.FabricanteRepository = new FabricanteRepository(Session);
+            this.FotoProdutoRepository = new FotoProdutoRepository(Session);
+            this.GeneroRepository = new GeneroRepository(Session);
+            this.PedidoRepository = new PedidoRepository(Session);
+            this.ProdutoRepository = new ProdutoRepository(Session);
+            this.TelefoneRepository = new TelefoneRepository(Session);
+            this.UsuarioRepository = new UsuarioRepository(Session);
 
-           
+
 
         }
 
@@ -185,7 +185,7 @@ namespace MVC.Model.DataBase
 
                     var session = _sessionFactory.OpenSession();
 
-                    CurrentSessionContext.Bind(Session);
+                    //CurrentSessionContext.Bind(Session);
 
                     return session;
                 }
