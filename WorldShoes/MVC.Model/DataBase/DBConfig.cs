@@ -47,7 +47,7 @@ namespace MVC.Model.DataBase
             //this.PedidoRepository = new PedidoRepository(Session);
             //this.ProdutoRepository = new ProdutoRepository(Session);
             //this.TelefoneRepository = new TelefoneRepository(Session);
-            this.UsuarioRepository = new UsuarioRepository(Session);
+            //this.UsuarioRepository = new UsuarioRepository(Session);
 
            
 
