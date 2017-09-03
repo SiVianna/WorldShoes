@@ -1,0 +1,62 @@
+﻿@model MVC.Model.DataBase.Model.Usuario
+
+@{
+    ViewBag.Title = "CreateUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="form">
+    <!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <div class="login-form">
+                    <!--login form-->
+                    <h2>Já sou Cadastrado</h2>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <input type="text" placeholder="Name" />
+                            <input type="email" placeholder="Email Address" />
+                            <span>
+                                <input type="checkbox" class="checkbox">
+                                Keep me signed in
+                            </span>
+                            <button type="submit" value="Create" class="btn btn-default">Login</button>
+
+                    }
+                </div><!--/login form-->
+            </div>
+            <div class="col-sm-1">
+                <h2 class="or">OR</h2>
+            </div>
+            <div class="col-sm-4">
+                <div class="signup-form">
+                    <!--sign up form-->
+                    <h2>Sou um novo cliente</h2>
+                    @using (Html.BeginForm("GravarUsuario", "Home", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div>
+                            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { placeholder = "Nome"} })
+                            @Html.ValidationMessageFor(model => model.Nome)
+                        </div>
+                        <div>
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "E-mail" } })
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </div>
+                        <div>
+                            @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { placeholder = "Senha" } })
+                            @Html.ValidationMessageFor(model => model.Senha)
+                        </div>
+                        <div>
+                            <button type="submit" value="Create" class="btn btn-default">Signup</button>
+                        </div>
+
+                    }
+                </div><!--/sign up form-->
+            </div>
+        </div>
+    </div>
+</section><!--/form-->

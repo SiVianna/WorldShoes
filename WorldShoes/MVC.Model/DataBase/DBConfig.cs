@@ -36,19 +36,20 @@ namespace MVC.Model.DataBase
 
         private DBConfig()
         {
-            this.AvaliacaoRepository = new AvaliacaoRepository(Session);
-            this.CategoriaRepository = new CategoriaRepository(Session);
-            this.CorRepository = new CorRepository(Session);
-            this.EnderecoRepository = new EnderecoRepository(Session);
-            this.FabricanteRepository = new FabricanteRepository(Session);
-            this.FotoProdutoRepository = new FotoProdutoRepository(Session);
-            this.GeneroRepository = new GeneroRepository(Session);
-            this.PedidoRepository = new PedidoRepository(Session);
-            this.ProdutoRepository = new ProdutoRepository(Session);
-            this.TelefoneRepository = new TelefoneRepository(Session);
+            Conectar();
+            //this.AvaliacaoRepository = new AvaliacaoRepository(Session);
+            //this.CategoriaRepository = new CategoriaRepository(Session);
+            //this.CorRepository = new CorRepository(Session);
+            //this.EnderecoRepository = new EnderecoRepository(Session);
+            //this.FabricanteRepository = new FabricanteRepository(Session);
+            //this.FotoProdutoRepository = new FotoProdutoRepository(Session);
+            //this.GeneroRepository = new GeneroRepository(Session);
+            //this.PedidoRepository = new PedidoRepository(Session);
+            //this.ProdutoRepository = new ProdutoRepository(Session);
+            //this.TelefoneRepository = new TelefoneRepository(Session);
             this.UsuarioRepository = new UsuarioRepository(Session);
 
-            Conectar();
+           
 
         }
 
@@ -69,7 +70,7 @@ namespace MVC.Model.DataBase
             try
             {
                 var stringConexao = "Persist Security Info=True;server=localhost;" +
-                    "port=3306;database=worldshoes;uid=root;pwd=781443aa";
+                    "port=3306;database=worldshoes;uid=root;pwd=";
 
                 var mysql = new MySqlConnection(stringConexao);
                 try
@@ -78,7 +79,7 @@ namespace MVC.Model.DataBase
                 }
                 catch
                 {
-                    CriarSchemaBanco("localhost", "3306", "worldshoes", "781443aa", "root");
+                    CriarSchemaBanco("localhost", "3306", "worldshoes", "", "root");
 
                 }
                 finally
