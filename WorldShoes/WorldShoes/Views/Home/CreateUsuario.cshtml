@@ -58,7 +58,7 @@
                             @Html.ValidationMessageFor(model => model.Email)
                         </div>
                         <div>
-                            @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { placeholder = "Senha" } })
+                            @Html.PasswordFor(model => model.Senha, new { @placeholder = "Senha" })
                             @Html.ValidationMessageFor(model => model.Senha)
                         </div>
                         <div>
