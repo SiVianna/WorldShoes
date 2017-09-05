@@ -2,6 +2,7 @@
 using NHibernate.Mapping.ByCode.Conformist;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,16 +12,27 @@ namespace MVC.Model.DataBase.Model
     public class Produto
     {
         public virtual int Id { get; set; }
+        [Required(ErrorMessage = "O campo nome é obrigatório")]
         public virtual String Nome { get; set; }
+        [Required(ErrorMessage = "O campo Descrição é obrigatório")]
+        [Display(Name = "Descrição")]
         public virtual String Descricao { get; set; }
+        [Required(ErrorMessage = "O campo Valor é obrigatório")]
         public virtual double Valor { get; set; }
+        [Required(ErrorMessage = "O campo Estoque é obrigatório")]
         public virtual int Estoque { get; set; }
+        [Required(ErrorMessage = "O campo Tamanho é obrigatório")]
         public virtual int Tamanho { get; set; }
+        [Required(ErrorMessage = "O campo Categoria é obrigatório")]
         public virtual Categoria Categoria { get; set; }
+        [Required(ErrorMessage = "O campo Gênero é obrigatório")]
+        [Display(Name = "Gênero")]
         public virtual Genero Genero { get; set; }
+        [Required(ErrorMessage = "O campo Cor é obrigatório")]
         public virtual Cor Cor { get; set; }
-
+        [Required(ErrorMessage = "O campo Fabricante é obrigatório")]
         public virtual Fabricante Fabricante { get; set; }
+
         public virtual IList<Avaliacao> Avaliacoes { get; set; }
         public virtual IList<FotoProduto> FotosProduto { get; set; }
         public virtual IList<Pedido> pedido_has_produto { get; set; }

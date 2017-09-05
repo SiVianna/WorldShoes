@@ -28,3 +28,10 @@ textarea {
     width:85px;
     height:84px;
 }
+.circulo{
+	width: 30px;
+	height: 30px;
+	border-radius:30px;
+	margin-left:5px;
+	border: 1px solid black;
+}

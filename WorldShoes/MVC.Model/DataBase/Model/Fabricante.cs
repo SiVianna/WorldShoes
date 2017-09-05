@@ -2,6 +2,7 @@
 using NHibernate.Mapping.ByCode.Conformist;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace MVC.Model.DataBase.Model
     public class Fabricante
     {
         public virtual int Id { get; set; }
+        [Required(ErrorMessage = "O campo Razão Social é obrigatório !")]
+        [Display(Name = "Razão Social")]
         public virtual String razao_social { get; set; }
 
         public virtual IList<Produto> Produtos { get; set; }

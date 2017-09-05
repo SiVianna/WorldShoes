@@ -3,6 +3,7 @@ using NHibernate.Mapping.ByCode;
 using NHibernate.Mapping.ByCode.Conformist;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,12 @@ namespace MVC.Model.DataBase.Model
     public class Usuario
     {
         public virtual int Id { get; set; }
+        [Required(ErrorMessage ="O Campo Nome é obrigatório")]
         public virtual String Nome { get; set; }
         public virtual String Sobrenome { get; set; }
+        [Required(ErrorMessage = "O Campo Email é obrigatório")]
         public virtual String Email { get; set; }
+        [Required(ErrorMessage = "O Campo Senha é obrigatório")]
         public virtual String Senha { get; set; }
         public virtual String Cpf { get; set; }
         public virtual DateTime DataNascimento { get; set; }

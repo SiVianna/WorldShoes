@@ -50,5 +50,25 @@ namespace WorldShoes.Controllers
             return View();
         }
 
+        public ActionResult Produtos()
+        {
+            var produtos = DBConfig.Instance.ProdutoRepository.AgruparPorNome();
+            return View(produtos);
+        }
+
+        public ActionResult DetalhesProduto(int id = 0)
+        {
+            Produto produto = DBConfig.Instance.ProdutoRepository.PrimeiroProduto(id);
+            if (produto != null)
+            {
+                var produtosRelacionados = DBConfig.Instance.ProdutoRepository.FindAll().Where(p => Equals(p.Categoria.Nome, produto.Categoria.Nome)).ToList();
+                produtosRelacionados.Remove(produto);
+                ViewBag.produtosRelacionados = produtosRelacionados;
+                ViewBag.produtoComOutrasCores = DBConfig.Instance.ProdutoRepository.FindAll().Where(p => Equals(p.Nome, produto.Nome)).ToList();
+                return View(produto);
+            }
+            return RedirectToAction("Produtos");
+        }
+
     }
 }
