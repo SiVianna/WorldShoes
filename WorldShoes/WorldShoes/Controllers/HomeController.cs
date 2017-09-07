@@ -31,25 +31,6 @@ namespace WorldShoes.Controllers
             return View();
         }
 
-        public ActionResult CreateUsuario()
-        {
-            var u = new Usuario();
-
-            return View(u);
-        }
-
-        public ActionResult GravarUsuario(Usuario u)
-        {
-            DBConfig.Instance.UsuarioRepository.Salvar(u);
-
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult Login()
-        {
-            return View();
-        }
-
         public ActionResult Produtos()
         {
             var produtos = DBConfig.Instance.ProdutoRepository.AgruparPorNome();

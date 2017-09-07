@@ -19,11 +19,23 @@ namespace WorldShoes.Controllers
 
         public ActionResult GravarCliente(Usuario u)
         {
-            
-           
-                DBConfig.Instance.UsuarioRepository.Salvar(u);
 
-                return RedirectToAction("CreateCliente");
+            var procurar = DBConfig.Instance.UsuarioRepository.FindAll().FirstOrDefault(f => f.Cpf == u.Cpf);
+
+            if(procurar != null)
+            {
+                ViewBag.Message = "CPF já Encontrada";
+                
+                return View("EditCliente", u);
+
+            }
+            else
+            {
+                DBConfig.Instance.UsuarioRepository.Salvar(u);
+                ViewBag.SuccessMessage = "Cadastrado com sucesso";
+                return View("Index");
+
+            }
             
             
         }
