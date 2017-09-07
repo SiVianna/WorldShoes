@@ -150,6 +150,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CoresController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\FabricantesController.cs" />
@@ -228,6 +229,8 @@
     <Content Include="Views\Produtos\Index.cshtml" />
     <Content Include="Views\Home\Produtos.cshtml" />
     <Content Include="Views\Home\DetalhesProduto.cshtml" />
+    <Content Include="Views\Cliente\CreateCliente.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
