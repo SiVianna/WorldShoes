@@ -233,6 +233,8 @@
     <Content Include="Views\Home\DetalhesProduto.cshtml" />
     <Content Include="Views\Cliente\CreateCliente.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\EditCliente.cshtml" />
+    <Content Include="Views\Cliente\DetailsCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

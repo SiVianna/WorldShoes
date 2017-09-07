@@ -28,6 +28,18 @@ namespace WorldShoes.Controllers
             
         }
 
+        public ActionResult EditCliente(int id)
+        {
+            var u = DBConfig.Instance.UsuarioRepository.PrimeiroUsuario(id);
+
+            return View(u);
+        }
+        public ActionResult DetailsCliente(int id)
+        {
+            var u = DBConfig.Instance.UsuarioRepository.FindAll().FirstOrDefault(f => f.Id == id);
+
+            return View(u);
+        }
         public ActionResult Login(String email, String senha)
         {
             var u = DBConfig.Instance.UsuarioRepository.findLoginAndSenha(email,senha);

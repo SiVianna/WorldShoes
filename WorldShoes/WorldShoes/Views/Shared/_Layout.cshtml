@@ -79,7 +79,14 @@
                                 @if (@Model != null && Model.Nome != null)
                                 {
 
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+                                    <li>
+
+                                        @Html.ActionLink("Account", "DetailsCliente", new { id = Model.Id }, new { @class = "fa fa-user" })
+                                    </li>
+
+                                  @* @Html.ActionLink("EditCliente", "EditCliente", new { id = Model.Id })*@                              
+                                  <!-- <i class="fa fa-user"></i>-->
+                                    
 
                                 }                        
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
