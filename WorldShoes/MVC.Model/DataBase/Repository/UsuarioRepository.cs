@@ -21,8 +21,13 @@ namespace MVC.Model.DataBase.Repository
 
             return usuario;
         }
-    }
 
+        public Usuario findLoginAndSenha(String email, String senha)
+        {
+            var usuario = this.Session.Query<Usuario>().Where(u => u.Email.Equals(email) && u.Senha.Equals(senha)).FirstOrDefault();
+            return usuario;
+           
+        }
 
-
+      }
 }

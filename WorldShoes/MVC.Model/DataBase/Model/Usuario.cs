@@ -13,11 +13,14 @@ namespace MVC.Model.DataBase.Model
     public class Usuario
     {
         public virtual int Id { get; set; }
-        [Required(ErrorMessage ="O Campo Nome é obrigatório")]
+        [Required(ErrorMessage = "O Campo Nome é obrigatório")]
         public virtual String Nome { get; set; }
         public virtual String Sobrenome { get; set; }
+
         [Required(ErrorMessage = "O Campo Email é obrigatório")]
+        [DataType(DataType.EmailAddress)]
         public virtual String Email { get; set; }
+
         [Required(ErrorMessage = "O Campo Senha é obrigatório")]
         public virtual String Senha { get; set; }
         public virtual String Cpf { get; set; }

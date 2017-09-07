@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WorldShoes"
+    "\\WorldShoes",
+    "\\WorldShoes\\WorldShoes",
+    "\\WorldShoes\\WorldShoes\\Views",
+    "\\WorldShoes\\WorldShoes\\Views\\Shared"
   ],
-  "SelectedNode": "\\WorldShoes\\WorldShoes.sln",
+  "SelectedNode": "\\WorldShoes\\WorldShoes\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
