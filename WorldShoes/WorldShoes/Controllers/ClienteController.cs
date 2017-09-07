@@ -14,7 +14,7 @@ namespace WorldShoes.Controllers
         {
             var u = new Usuario();
 
-            return View(u);
+           return View(u);
         }
 
         public ActionResult GravarCliente(Usuario u)
@@ -37,10 +37,20 @@ namespace WorldShoes.Controllers
             if (u != null)
             {
                 ViewBag.Message = "Pessoa Encontrada";
+                
                 return View("Index", u);
             }
 
             ViewBag.Message = "Ops! Usuário não encontrado. Confira seus dados ou crie uma conta";
+            return View("CreateCliente");
+        }
+
+        public ActionResult logoff()
+        {
+            var u = new Usuario();
+
+            u = null;
+
             return View("CreateCliente");
         }
 
