@@ -28,5 +28,17 @@ namespace MVC.Model.DataBase.Repository
             return query.List<Produto>();
         }
 
+        public IList<Produto> BuscarPorCategoria(int idcategoria)
+        {
+            var query = Session.CreateSQLQuery(@"SELECT p.* FROM worldshoes.produto as p Where p.idCategoria="+idcategoria+ " group by Nome").AddEntity("p", typeof(Produto));
+            return query.List<Produto>();
+        }
+
+        public IList<Produto> BuscarPorMarca(int idmarca)
+        {
+            var query = Session.CreateSQLQuery(@"SELECT p.* FROM worldshoes.produto as p Where p.idFabricante=" + idmarca + " group by Nome").AddEntity("p", typeof(Produto));
+            return query.List<Produto>();
+        }
+
     }
 }

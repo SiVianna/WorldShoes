@@ -35,15 +35,18 @@ namespace WorldShoes
                      "~/Scripts/jquery.elevatezoom.js",
                       "~/Scripts/jquery.zoom.js",
                        "~/Scripts/jquery.rateyo.js",
-                      "~/Scripts/MyScript.js"
+                      "~/Scripts/MyScript.js",
+                      "~/Scripts/RequisicoesAjax.js",
+                      "~/Scripts/jquery.validate.unobtrusive.min.js",
+                      "~/Scripts/jquery.unobtrusive-ajax.js"
                      ));
 
             bundles.Add(new ScriptBundle("~/bundles/adminjs").Include(
-                      "~/Scripts/jquery.min.js",
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/metisMenu.min.js",
-                      "~/Scripts/startmin.js"
-                      ));
+                        "~/Scripts/jquery.min.js",
+                         "~/Scripts/bootstrap.js",
+                        "~/Scripts/metisMenu.min.js",
+                        "~/Scripts/startmin.js"
+                        ));
 
 
 
@@ -61,13 +64,22 @@ namespace WorldShoes
                      "~/Content/jquery.rateyo.css"
                 ));
 
+            //bundles.Add(new StyleBundle("~/Content/admin").Include(
+            //          "~/Content/metisMenu.min.css",
+            //          "~/Content/timeline.css",
+            //          "~/Content/startmin.css",
+            //          "~/Content/morris.css",
+            //          "~/Content/admin.css"
+            //          ));
+
             bundles.Add(new StyleBundle("~/Content/admin").Include(
                       "~/Content/metisMenu.min.css",
                       "~/Content/timeline.css",
                       "~/Content/startmin.css",
-                      "~/Content/morris.css",
-                      "~/Content/admin.css"
+                      "~/Content/morris.css"
                       ));
+
+
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿@model PagedList.IPagedList< MVC.Model.DataBase.Model.Produto>
+﻿@model PagedList.IPagedList<MVC.Model.DataBase.Model.Produto>
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Home Page";
 }
 <div class="col-sm-3">
     <div class="left-sidebar">
-        
+
         <div class="panel-group category-products" id="accordian">
             <!--category-productsr-->
             @foreach (var categoria in ViewBag.Categorias)
